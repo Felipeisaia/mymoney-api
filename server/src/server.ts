@@ -81,7 +81,9 @@ app.delete('/transactions/:id', async (request, reply) => {
   return reply.status(204).send()
 })
 
-// Ligar o Servidor 
-app.listen({ port: 3333 }).then(() => {
-  console.log('Servidor rodando em http://localhost:3333')
+app.listen({
+  host: '0.0.0.0',
+  port: process.env.PORT ? Number(process.env.PORT) : 3333,
+}).then(() => {
+  console.log('Servidor rodando')
 })
