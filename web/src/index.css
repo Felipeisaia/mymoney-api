@@ -1,0 +1,254 @@
+:root {
+  --background: #f0f2f5;
+  --red: #e52e4d;
+  --blue: #5429cc;
+  --green: #33cc95;
+  --blue-light: #6933ff;
+  --text-title: #363f5f;
+  --text-body: #969cb3;
+  --shape: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  -webkit-font-smoothing: antialiased;
+}
+
+body, input, textarea, button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+  font-weight: 600;
+}
+
+button {
+  cursor: pointer;
+}
+
+[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.global-header {
+  background: var(--blue);
+}
+
+.header-content {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem 1rem 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-content h2 {
+  color: #fff;
+}
+
+.header-content button {
+  font-size: 1rem;
+  color: #fff;
+  background: var(--blue-light);
+  border: 0;
+  padding: 0 2rem;
+  border-radius: 0.25rem;
+  height: 3rem;
+  transition: filter 0.2s;
+}
+
+.header-content button:hover {
+  filter: brightness(0.9);
+}
+
+.summary-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: -10rem;
+}
+
+.summary-card {
+  background: var(--shape);
+  padding: 1.5rem 2rem;
+  border-radius: 0.25rem;
+  color: var(--text-title);
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.1);
+}
+
+.summary-card header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.summary-card strong {
+  display: block;
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 3rem;
+}
+
+.table-container {
+  margin-top: 4rem;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0 0.5rem;
+}
+
+th {
+  color: var(--text-body);
+  font-weight: 400;
+  padding: 1rem 2rem;
+  text-align: left;
+  line-height: 1.5rem;
+}
+
+td {
+  padding: 1rem 2rem;
+  border: 0;
+  background: var(--shape);
+  color: var(--text-body);
+  border-radius: 0.25rem;
+}
+
+td:first-child {
+  color: var(--text-title);
+}
+
+
+.react-modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0; bottom: 0; right: 0; left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-modal-content {
+  width: 100%;
+  max-width: 576px;
+  background: var(--background);
+  padding: 3rem;
+  position: relative;
+  border-radius: 0.25rem;
+}
+
+.react-modal-close {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  border: 0;
+  background: transparent;
+  transition: filter 0.2s;
+}
+
+.react-modal-close:hover {
+  filter: brightness(0.8);
+}
+
+.react-modal-content form h2 {
+  color: var(--text-title);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.react-modal-content form input {
+  width: 100%;
+  padding: 0 1.5rem;
+  height: 4rem;
+  border-radius: 0.25rem;
+  border: 1px solid #d7d7d7;
+  background: #e7e9ee; 
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.react-modal-content form input::placeholder {
+  color: var(--text-body);
+}
+
+.react-modal-content form input + input {
+  margin-top: 1rem;
+}
+
+.react-modal-content form button[type="submit"] {
+  width: 100%;
+  padding: 0 1.5rem;
+  height: 4rem;
+  background: var(--green);
+  color: #FFF;
+  border-radius: 0.25rem;
+  border: 0;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  font-weight: 600;
+  transition: filter 0.2s;
+}
+
+.react-modal-content form button[type="submit"]:hover {
+  filter: brightness(0.9);
+}
+
+.transaction-type-container {
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.radio-box {
+  height: 4rem;
+  border: 1px solid #d7d7d7;
+  border-radius: 0.25rem;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s;
+}
+
+.radio-box:hover {
+  border-color: #aaa;
+}
+
+.radio-box img {
+  width: 20px;
+  height: 20px;
+}
+
+.radio-box span {
+  display: inline-block;
+  margin-left: 1rem;
+  font-size: 1rem;
+  color: var(--text-title);
+}
+
+.radio-box.deposit-active {
+  background: rgba(51, 204, 149, 0.1); 
+  border-color: var(--green);
+}
+
+.radio-box.withdraw-active {
+  background: rgba(229, 46, 77, 0.1); 
+  border-color: var(--red);
+}
