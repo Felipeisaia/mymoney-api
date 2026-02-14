@@ -33,23 +33,26 @@ export function MetricsChart() {
         <PieChart>
           <Pie
             data={data}
-            cx="50%" 
-            cy="50%" 
-            innerRadius={80} 
+            cx="50%"
+            cy="50%"
+            innerRadius={80}
             outerRadius={120}
             paddingAngle={5}
             dataKey="value"
           >
-            {data.map((entry, index) => (
+            {data.map((_, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
           </Pie>
-          
-          <Tooltip 
-            formatter={(value: number) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value)}
+
+          <Tooltip
+            tickFormatter={(value: number | undefined) => {
+              if (typeof value !== 'number') return ''
+              return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value)
+            }}
           />
-          
-          <Legend verticalAlign="bottom" height={36}/>
+
+          <Legend verticalAlign="bottom" height={36} />
         </PieChart>
       </ResponsiveContainer>
     </div>

@@ -1,4 +1,4 @@
-import { FormEvent, useState, useEffect } from 'react';
+import type { FormEvent } from 'react'
 import Modal from 'react-modal';
 import { useTransactions } from '../hooks/TransactionsContext';
 import { toast } from 'react-toastify';

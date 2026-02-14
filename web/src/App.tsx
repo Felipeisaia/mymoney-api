@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Modal from 'react-modal';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
