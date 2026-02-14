@@ -33,14 +33,14 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
 
   useEffect(() => {
-    fetch('http://localhost:3333/transactions')
+    fetch('https://mymoney-api-zeu0.onrender.com/transactions')
       .then(response => response.json())
       .then(data => setTransactions(data));
   }, []);
 
   async function createTransaction(transactionInput: TransactionInput) {
     try {
-      const response = await fetch('http://localhost:3333/transactions', {
+      const response = await fetch('https://mymoney-api-zeu0.onrender.com/transactions', {
         method: 'POST',
         body: JSON.stringify(transactionInput),
         headers: { 'Content-Type': 'application/json' },
@@ -56,7 +56,7 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
 
   async function updateTransaction(transactionUpdate: TransactionUpdateInput) {
     try {
-      const response = await fetch(`http://localhost:3333/transactions/${transactionUpdate.id}`, {
+      const response = await fetch(`https://mymoney-api-zeu0.onrender.com/transactions/${transactionUpdate.id}`, {
         method: 'PUT',
         body: JSON.stringify(transactionUpdate),
         headers: { 'Content-Type': 'application/json' },
@@ -84,7 +84,7 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
 
   async function deleteTransaction(id: string) {
     try {
-        const response = await fetch(`http://localhost:3333/transactions/${id}`, {
+        const response = await fetch(`https://mymoney-api-zeu0.onrender.com/transactions/${id}`, {
             method: 'DELETE',
         });
 
