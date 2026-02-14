@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'; 
+import { createContext, useEffect, useState, useContext, type ReactNode } from 'react';
 import { toast } from 'react-toastify';
 
 export interface Transaction {
