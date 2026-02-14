@@ -5,7 +5,7 @@
     "target": "es2020",
     "module": "commonjs",
     "moduleResolution": "node",
-    "esModuleXZInterop": true,
+    "esModuleInterop": true,
     "skipLibCheck": true,
     "strict": true
   }
